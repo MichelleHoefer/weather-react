@@ -1,4 +1,4 @@
-div {
+main {
   background-color: lightblue;
 
   font-size: 24px;
@@ -8,6 +8,8 @@ header {
   font-size: 48px;
   padding: 20px;
   margin-bottom: 20px;
+  display: block;
+  text-align: center;
 }
 footer {
   display: block;

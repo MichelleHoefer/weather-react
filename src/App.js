@@ -8,8 +8,9 @@ function App() {
       <div className="container  ">
         <header className="App-header">React Weather App</header>
         <main className="weather">
-          <form>
-            <input type="search" placeholder="Enter a city..." />
+          <form className="">
+            <input type="search" placeholder="Enter a city..." className />
+
             <input type="submit" value="Search" />
           </form>
           <h1>Tokyo</h1>
