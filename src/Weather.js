@@ -49,9 +49,7 @@ export default function Weather() {
       });
   }
 
-  useEffect(() => {
-    fetchWeather();
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="city-search">
