@@ -1,12 +1,94 @@
-.weather-results p {
-  font-size: 16px;
-  margin-top: 10px;
+/* Weather.css */
+
+.city-search {
+  margin: 20px auto;
+  text-align: center;
 }
 
-p {
+.search-input {
+  background: #f9f7fe;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 6px;
+  color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
-  padding: 10px 0;
+  height: 50px;
+  width: 60%;
+  max-width: 300px;
+  margin-right: 10px;
 }
-li {
+
+.search-input::placeholder {
+  line-height: 20px;
+  color: rgba(39, 33, 66, 0.4);
+}
+
+.btn {
+  background: #006064;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 6px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+.weather-results {
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #004d4d;
+  font-size: 18px;
+  text-align: center;
+}
+
+.weather-results ul {
+  padding: 0;
+  margin: 10px 0 20px;
   list-style: none;
+}
+
+.weather-results img.weather-icon {
+  width: 64px;
+  height: 64px;
+  margin: 10px 0;
+}
+
+.weather-results .weather-temp {
+  font-size: 42px;
+  font-weight: 300;
+  display: block;
+  margin: 10px 0;
+}
+
+.weather-results .weather-details {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.weather-results li {
+  margin: 4px 0;
+}
+.weather-temperature {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.weather-temperature .temp-unit {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.weather-temperature a {
+  color: #006064;
+  text-decoration: none;
+}
+
+.weather-temperature a:hover {
+  text-decoration: underline;
 }

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Weather.css";
 
+import WeatherInfo from "./WeatherInfo";
+
 export default function Weather() {
-  const [city, setCity] = useState("London"); // ✅ Default city
+  const [city, setCity] = useState("London");
   const [weather, setWeather] = useState(null);
-  const [loading, setLoading] = useState(false); // ✅ Loading state
-  const [error, setError] = useState(null); // ✅ Error state
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   function updateCity(event) {
     setCity(event.target.value);
@@ -22,7 +24,7 @@ export default function Weather() {
     setError(null);
 
     let apiKey = "tfdbcf08d180afdebd50co3aa4ac4389";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 
     axios
       .get(apiUrl)
@@ -31,11 +33,13 @@ export default function Weather() {
           city: response.data.city,
           temperature: response.data.temperature.current,
           humidity: response.data.temperature.humidity,
+          date: new Date(response.data.time * 1000),
           description: response.data.condition.description,
           wind: response.data.wind.speed,
           icon: response.data.condition.icon_url,
           time: response.data.time,
         });
+
         setLoading(false);
       })
       .catch((error) => {
@@ -45,54 +49,25 @@ export default function Weather() {
       });
   }
 
-  // ✅ Load default city on first render
   useEffect(() => {
     fetchWeather();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div>
+    <div className="city-search">
       <form onSubmit={handleSubmit} className="city-search">
-        <div className="row">
-          <div className="col-6">
-            <input
-              type="search"
-              onChange={updateCity}
-              placeholder="Enter a city..."
-              className="search-input"
-            />
-          </div>
-          <div className="col-3 p-0">
-            <input type="submit" value="Search" className="btn" />
-          </div>
-        </div>
-      </form>
+        <input
+          type="search"
+          onChange={updateCity}
+          placeholder="Enter a city..."
+          className="search-input"
+        />
 
+        <input type="submit" value="Search" className="btn" />
+      </form>
       {loading && <p>Loading weather data...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {weather && !loading && !error && (
-        <div className="weather-results">
-          <h1>{weather.city}</h1>
-          <ul>
-            <li>{new Date(weather.time * 1000).toLocaleString()}</li>
-            <li>{weather.description}</li>
-          </ul>
-          <div className="row">
-            <div className="col-6">
-              <img src={weather.icon} alt="weather icon" />
-              <span>{Math.round(weather.temperature)}°C</span>
-            </div>
-            <div className="col-6">
-              <ul>
-                <li>Humidity: {weather.humidity}%</li>
-                <li>Wind: {Math.round(weather.wind)} km/h</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
+      {weather && !loading && !error && <WeatherInfo data={weather} />}
     </div>
   );
 }

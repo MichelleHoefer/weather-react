@@ -48,14 +48,3 @@ a:hover {
   margin: 0 auto;
   padding: 20px;
 }
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.col-6 {
-  flex: 0 0 48%;
-}
