@@ -109,3 +109,11 @@
   padding: 0;
   margin: 0;
 }
+.weather-forecast {
+  background: #e0f7fa;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  color: #006064;
+  text-align: center;
+}

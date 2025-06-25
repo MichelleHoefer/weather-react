@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather() {
   const [inputCity, setInputCity] = useState("London");
@@ -63,12 +64,18 @@ export default function Weather() {
           placeholder="Enter a city..."
           className="search-input"
         />
-
         <input type="submit" value="Search" className="btn" />
       </form>
+
       {loading && <p>Loading weather data...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {weather && !loading && !error && <WeatherInfo data={weather} />}
+
+      {weather && !loading && !error && (
+        <>
+          <WeatherInfo data={weather} />
+          <WeatherForecast city={weather.city} />
+        </>
+      )}
     </div>
   );
 }
