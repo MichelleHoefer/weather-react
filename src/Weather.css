@@ -1,5 +1,3 @@
-/* Weather.css */
-
 .city-search {
   margin: 20px auto;
   text-align: center;
@@ -71,12 +69,21 @@
   margin: 10px 0;
 }
 
-.weather-results li {
-  margin: 4px 0;
+.weather-results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
 }
 .weather-temperature {
   font-size: 36px;
   font-weight: 300;
+}
+.weather-results img.weather-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0;
 }
 
 .weather-temperature .temp-unit {
@@ -91,4 +98,14 @@
 
 .weather-temperature a:hover {
   text-decoration: underline;
+}
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.weather-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
