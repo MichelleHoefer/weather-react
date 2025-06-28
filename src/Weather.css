@@ -34,7 +34,7 @@
 }
 
 .weather-results {
-  background: #f0f0f0;
+  background: #e0f7fa;
   border-radius: 8px;
   padding: 20px;
   margin-top: 30px;
@@ -81,8 +81,8 @@
   font-weight: 300;
 }
 .weather-results img.weather-icon {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   margin: 0;
 }
 
@@ -116,4 +116,24 @@
   border-radius: 8px;
   color: #006064;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.forecast-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0;
+}
+.forecast-temps {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.forecast-temp-max {
+  color: #006064;
+}
+
+.forecast-temp-min {
+  color: grey;
 }

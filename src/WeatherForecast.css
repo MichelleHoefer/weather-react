@@ -1,0 +1,29 @@
+.weather-forecast {
+  background: #e0f7fa;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  color: #006064;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.forecast-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0;
+}
+.forecast-temps {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.forecast-temp-max {
+  color: #006064;
+}
+
+.forecast-temp-min {
+  color: #006064;
+  opacity: 0.6;
+}

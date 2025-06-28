@@ -73,7 +73,7 @@ export default function Weather() {
       {weather && !loading && !error && (
         <>
           <WeatherInfo data={weather} />
-          <WeatherForecast city={weather.city} />
+          <WeatherForecast city={weather.city} icon={weather.icon} />
         </>
       )}
     </div>
