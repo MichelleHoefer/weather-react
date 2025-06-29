@@ -5,8 +5,8 @@ import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 
 export default function Weather() {
-  const [inputCity, setInputCity] = useState("London");
   const [city, setCity] = useState("London");
+  const [inputCity, setInputCity] = useState("");
 
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
