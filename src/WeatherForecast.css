@@ -8,22 +8,34 @@
   display: flex;
   justify-content: space-between;
 }
-.forecast-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0;
+.forecast-icon img {
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
+
 .forecast-temps {
   display: flex;
   justify-content: center;
   gap: 5px;
 }
 
-.forecast-temp-max {
-  color: #006064;
-}
-
+.forecast-temp-max,
 .forecast-temp-min {
+  font-size: 1rem;
   color: #006064;
   opacity: 0.6;
+}
+@media (max-width: 768px) {
+  .forecast-card {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .forecast-card {
+    flex: 1 1 100%;
+  }
 }
